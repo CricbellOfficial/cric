@@ -41,23 +41,31 @@ def get_movie(query):
             c  = movie_page_link.find("div", {'class': 'wizard'})
             t1 =  c.find_all("div", {'class': 'name'})
             text = ""
+            text2 = ""
             for ll in t1:
                 cc = f"{ll}"
                 rep = cc.replace('<div class="name">','')
                 rep = rep.replace('</div>','')
-                text = f"{text}\n{rep}"
-            movie_details["t1"] = text
+                if text=="":
+                    text = f"{rep}"
+                else:
+                    text2 = f"{rep}"
+            movie_details["t1"] = f"{text}+{text2}"
             prob =  c.find_all("div", {'class': 'prob'})
-            probt = ""
+            pt = ""
+            pt2 = ""
             for pp in prob:
                 cc = f"{pp}"
                 rep = cc.replace('<div class="name">','')
                 rep = rep.replace('</div>','')
-                probt = f"{probt}\n{rep}"
-            if probt=="":
+                if pt=="":
+                    pt = f"{rep}"
+                else:
+                    pt2 = f"{rep}"
+            if pt=="":
                 ok = 'ok'
             else:
-                movie_details["t1"] = probt
+                movie_details["t1p"] = f"{pt}+{pt2}"
             
             
     return movie_details
