@@ -39,10 +39,11 @@ def get_movie(query):
             text = movie_page_link.find("div", {'class': 'pick'}).strong.text
             movie_details["pick"] = text
             c  = movie_page_link.find("div", {'class': 'wizard'})
-            t1 =  c.find("div", {'class': 'home'})
-            movie_details["t1"] = t1.find("div", {'class': 'name'})
-            t2 =  c.find("div", {'class': 'away'})
-            movie_details["t2"] = t2.find("div", {'class': 'name'})
-
+            t1 =  c.find_all("div", {'class': 'name'})
+            text = ""
+            for ll in t1:
+                text = f"{ll}\n"
+            movie_details["t1"] = text
+          
             
     return movie_details
