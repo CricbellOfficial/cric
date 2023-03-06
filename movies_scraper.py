@@ -42,9 +42,8 @@ def get_movie(query):
             get =  c.find("div", {'class': 'home'})
             t1 =  get.find("div", {'class': 'name'})
             get2 =  c.find("div", {'class': 'away'})
-            t1 =  get2.find("div", {'class': 'name'})
-            t1 = t1.replace('<div class="name"', '')
-            t1 = t1.replace('</div>', '')
+            t2 =  get2.find("div", {'class': 'name'})
+          
             
             movie_details["prob"] = f"{t1}\n{t2}"
      
