@@ -29,19 +29,15 @@ def search_movies(query):
 
 def get_movie(query):
     movie_details = {}
-    movie_page_link = BeautifulSoup(requests.get(f"https://www.onlinecricketbetting.net/fantasy/dream11/bgl-vs-mpd-08-feb-2023").text, "html.parser")
+    #movie_page_link = BeautifulSoup(requests.get(f"https://www.onlinecricketbetting.net/fantasy/dream11/bgl-vs-mpd-08-feb-2023").text, "html.parser")
     chekcurl = url_list[query]
-    dreamlink = chekcurl.replace("cricket-betting-tips", "fantasy/dream11")
-    movie_page_link2 = BeautifulSoup(requests.get(f"https://www.onlinecricketbetting.net/fantasy/dream11/rsaw-vs-slw-10-feb-2023/").text, "html.parser")  
+    #dreamlink = chekcurl.replace("cricket-betting-tips", "fantasy/dream11")
+    movie_page_link = BeautifulSoup(requests.get(f"{chekcurl}").text, "html.parser")  
     
     if movie_page_link:
-            title = movie_page_link.find("div", {'class': 'top-picks'})
-            t = title.find("p")
-                  
-            movie_details["title"] = t
-    if movie_page_link2:
-            
-            checkl = ""
-            
+            movie_details["title"] = movie_page_link.find("div", {'class': 'box'}).h2.text
+            text = movie_page_link.find("div", {'class': 'pick'})
+            movie_details["links"] = text
+     
             
     return movie_details
