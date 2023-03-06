@@ -57,12 +57,12 @@ def movie_result(update, context) -> None:
     pp = s['t1']
     pp2 = s['t2']
     
-    request = InlineKeyboardButton(pick, url="https://t.me/fzfilmyzilla")
+    request = InlineKeyboardButton(pp, url="https://t.me/fzfilmyzilla")
     keyboards.append([request])
     
     reply_markup = InlineKeyboardMarkup(keyboards)
     query.message.reply_text('Click To Watch Online & Download', reply_markup=reply_markup)
-    query.message.reply_text(pp)
+    query.message.reply_text(pick)
     query.message.reply_text(pp2)
 
    
