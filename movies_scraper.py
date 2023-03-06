@@ -43,8 +43,9 @@ def get_movie(query):
             text = ""
             for ll in t1:
                 cc = f"{ll}"
-                rep = cc.replace('<div class="name"','')
+                rep = cc.replace('<div class="name">','')
                 text = rep.replace('</div>','')
+                text = f"{text}\n+"
             movie_details["t1"] = text
           
             
