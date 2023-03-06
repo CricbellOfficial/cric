@@ -54,8 +54,8 @@ def movie_result(update, context) -> None:
     keyboards = []
     pick = s['pick']
     pp = s['t1']
-    pp2 = s['t2']
-    text = f"team1:{pp}\nTeam2:{pp2}"
+    
+    text = f"team1:{pp}"
     m = query.message.reply_photo(photo=img, caption=f"🎥 {text}")
     global msgid1
     msgid1 = m["message_id"]
@@ -65,7 +65,7 @@ def movie_result(update, context) -> None:
     reply_markup = InlineKeyboardMarkup(keyboards)
     query.message.reply_text('Click To Watch Online & Download', reply_markup=reply_markup)
     query.message.reply_text(pick)
-    query.message.reply_text(pp2)
+    query.message.reply_text(pp)
 
    
 
