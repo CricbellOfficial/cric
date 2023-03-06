@@ -44,9 +44,20 @@ def get_movie(query):
             for ll in t1:
                 cc = f"{ll}"
                 rep = cc.replace('<div class="name">','')
-                text = rep.replace('</div>','')
-                text = f"{text}\n+"
+                rep = rep.replace('</div>','')
+                text = f"{text}\n{rep}"
             movie_details["t1"] = text
-          
+            prob =  c.find_all("div", {'class': 'prob'})
+            probt = ""
+            for pp in prob:
+                cc = f"{pp}"
+                rep = cc.replace('<div class="name">','')
+                rep = rep.replace('</div>','')
+                probt = f"{probt}\n{rep}"
+            if probt=="":
+                ok = 'ok'
+            else:
+                movie_details["t1"] = probt
+            
             
     return movie_details
