@@ -42,8 +42,10 @@ def get_movie(query):
             get =  c.find("div", {'class': 'home'})
             gett =  get.find("div", {'class': 'name'})
             get2 =  c.find("div", {'class': 'away'})
-            get2t =  c.find("div", {'class': 'name'})
-            movie_details["prob"] = f"{gett}\n{get2t}"
+            get2t =  get2.find("div", {'class': 'name'})
+            t1 = gett.text
+            t2 = get2t.text
+            movie_details["prob"] = f"{t2}\n{t2}"
      
             
     return movie_details
