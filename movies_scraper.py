@@ -40,9 +40,9 @@ def get_movie(query):
             movie_details["pick"] = text
             c  = movie_page_link.find("div", {'class': 'wizard'})
             t1 =  c.find("div", {'class': 'home'})
-            movie_details["t1"] = t1
+            movie_details["t1"] = t1.find("div", {'class': 'name'})
             t2 =  c.find("div", {'class': 'away'})
-            movie_details["t2"] = t2
+            movie_details["t2"] = t2.find("div", {'class': 'name'})
 
             
     return movie_details
