@@ -50,14 +50,15 @@ def movie_result(update, context) -> None:
     response = requests.get("https://res.cloudinary.com/qm-media/image/upload/w_100,f_auto/varial/ocb/logos/teams/victoria")
     img = BytesIO(response.content)
     
-    global msgid1
-    msgid1 = m["message_id"]
+    
     keyboards = []
     pick = s['pick']
     pp = s['t1']
     pp2 = s['t2']
     text = f"team1:{pp}\nTeam2:{pp2}"
     m = query.message.reply_photo(photo=img, caption=f"🎥 {text}")
+    global msgid1
+    msgid1 = m["message_id"]
     request = InlineKeyboardButton("Follow me", url="https://t.me/fzfilmyzilla")
     keyboards.append([request])
     
