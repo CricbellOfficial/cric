@@ -17,9 +17,9 @@ chatid = ""
 x = 0
 
 def welcome(update, context) -> None:
-    update.message.reply_text(f"Hello *{update.message.from_user.first_name}* \n Welcome To Our Group.\n"
+    update.message.reply_text(f"Hello *{update.message.from_user.first_name}* \n Welcome To Our Cricket Fan Group.\n"
                               f"🔥 Search It 💯  Enjoy it  🍿")
-    update.message.reply_text("👇 Type Movie Or Series Name 👇")
+    #update.message.reply_text("👇 Type Movie Or Series Name 👇")
 
 
 def find_movie(update, context):
@@ -57,7 +57,7 @@ def movie_result(update, context) -> None:
     request = InlineKeyboardButton(pick, url="https://t.me/fzfilmyzilla")
     keyboards.append([request])
     
-    reply_markup = InlineKeyboardMarkup(request)
+    reply_markup = InlineKeyboardMarkup(keyboards)
     query.message.reply_text('Click To Watch Online & Download', reply_markup=reply_markup)
     
 
