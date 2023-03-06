@@ -36,8 +36,8 @@ def get_movie(query):
     
     if movie_page_link:
             movie_details["title"] = movie_page_link.find("div", {'class': 'box'}).h2.text
-            text = movie_page_link.find("div", {'class': 'pick'})
-            movie_details["links"] = text
+            text = movie_page_link.find("div", {'class': 'pick'}).strong.text
+            movie_details["pick"] = text
      
             
     return movie_details
