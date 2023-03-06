@@ -66,8 +66,8 @@ def movie_result(update, context) -> None:
     query.message.reply_text('Click To Watch Online & Download', reply_markup=reply_markup)
     m = query.message.reply_text(pick)
     idd = m.message_id
-    m.message.edit_text("fhdfhdfhdh")
-    m.message.edit_text("dfsdff")
+    m.edit_text("fhdfhdfhdh")
+    m.edit_text("dfsdff")
 
    
 
