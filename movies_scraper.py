@@ -38,6 +38,12 @@ def get_movie(query):
             movie_details["title"] = movie_page_link.find("div", {'class': 'box'}).h2.text
             text = movie_page_link.find("div", {'class': 'pick'}).strong.text
             movie_details["pick"] = text
+            c  = movie_page_link.find("div", {'class': 'wizard'})
+            get =  c.find("div", {'class': 'home'})
+            gett =  get.find("div", {'class': 'name'}).text
+            get2 =  c.find("div", {'class': 'away'})
+            get2t =  c.find("div", {'class': 'name'}).text
+            movie_details["prob"] = f"{gett}\n{get2t}"
      
             
     return movie_details
