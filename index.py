@@ -84,7 +84,7 @@ def movie_result(update, context) -> None:
         m.edit_text(f"{text}\n{t1c}◼️◼️◼️◼️◼️◻️{t2c}")
     else:
         ok = 'ok'
-        m.edit_text("Running Update join our Official Channel)
+        m.edit_text("Running Update join our Official Channel")
    
 
    
