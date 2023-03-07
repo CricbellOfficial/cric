@@ -56,20 +56,20 @@ def movie_result(update, context) -> None:
     t1 = s['t1']
     t1 = s['t2']
     #int(float(a))
-    t1p = s['t1p']
-    t2p = s['t2p']
-    
-        
-    m = query.message.reply_photo(photo=img, caption=f"🎥 s['title']")
-    global msgid1
-    msgid1 = m["message_id"]
+    t1c = s['t1p']
+    t2c = s['t2p']
+    t1p = t1c.replace('%', '')
+    t2p = t2c.replace('%', '')
     request = InlineKeyboardButton(pick, url="https://t.me/fzfilmyzilla")
     keyboards.append([request])
-    
-   
     reply_markup = InlineKeyboardMarkup(keyboards)
-    query.message.reply_text('#cricbell_expert', reply_markup=reply_markup)
-    m = query.message.reply_text(pick)
+    #query.message.reply_text('#cricbell_expert', reply_markup=reply_markup)
+        
+    k = query.message.reply_photo(photo=img, caption=f"🎥 {s['title']}", reply_markup=reply_markup)
+    global msgid1
+    msgid1 = k["message_id"]
+
+    m = query.message.reply_text(f"{t1c}{t2c}")
     idd = m.message_id
     if 0 < int(float(t1p)) < 20:
         m.edit_text(f"{t1p}◼️◻️◻️◻️◻️◻️◻️◻️◻️◻️{t2p}")
