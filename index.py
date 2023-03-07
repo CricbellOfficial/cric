@@ -53,9 +53,13 @@ def movie_result(update, context) -> None:
     
     keyboards = []
     pick = s['pick']
-    pp = s['t1']
+    t1 = s['t1']
+    t1 = s['t2']
+    #int(float(a))
+    t1p = s['t1p']
+    t2p = s['t2p']
     
-    text = f"team1:{pp}"
+        
     m = query.message.reply_photo(photo=img, caption=f"🎥 s['title']")
     global msgid1
     msgid1 = m["message_id"]
@@ -66,12 +70,17 @@ def movie_result(update, context) -> None:
     query.message.reply_text('#cricbell_expert', reply_markup=reply_markup)
     m = query.message.reply_text(pick)
     idd = m.message_id
-    m.edit_text("◼️◻️◻️◻️◻️◻️◻️◻️◻️◻️")
-    m.edit_text("◼️◼️◼️◻️◻️◻️◻️◻️◻️◻️")
-    m.edit_text("◼️◼️◼️◼️◼️◻️◻️◻️◻️◻️")
-    m.edit_text("◼️◼️◼️◼️◼️◼️◼️◻️◻️◻️")
-    m.edit_text("◼️◼️◼️◼️◼️◼️◼️◼️◻️◻️")
-    m.edit_text("◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️")
+    for int(float(t1p)) in range(0, 20):
+        m.edit_text(f"{t1p}◼️◻️◻️◻️◻️◻️◻️◻️◻️◻️{t2p}")
+    for int(float(t1p)) in range(21, 40):
+        m.edit_text(f"{t1p}◼️◼️◼️◻️◻️◻️◻️◻️◻️◻️{t2p}")
+    for int(float(t1p)) in range(41, 60):
+        m.edit_text(f"{t1p}◼️◼️◼️◼️◼️◻️◻️◻️◻️◻️{t2p}")
+    for int(float(t1p)) in range(61, 80):
+        m.edit_text(f"{t1p}◼️◼️◼️◼️◼️◼️◼️◻️◻️◻️{t2p}")
+    for int(float(t1p)) in range(81, 100):
+        m.edit_text(f"{t1p}◼️◼️◼️◼️◼️◼️◼️◼️◻️◻️{t2p}")
+   
 
    
 
