@@ -65,7 +65,7 @@ def movie_result(update, context) -> None:
     reply_markup = InlineKeyboardMarkup(keyboards)
     #query.message.reply_text('#cricbell_expert', reply_markup=reply_markup)
         
-    k = query.message.reply_photo(photo=img, caption=f"🏆 {s['title']}\n#cricbellExpert Today Team Choice\n👇 👇 👇 👇", reply_markup=reply_markup)
+    k = query.message.reply_photo(photo=img, caption=f"🏆 {s['title']}\n⚠️Note: this Team Choice Before Toss\n For RUnning Updates Join Official Channel\n\n#CricbellExpert Today Team Choice\n👇 👇 👇 👇", reply_markup=reply_markup)
     global msgid1
     msgid1 = k["message_id"]
     text = f"{t1}⛹️‍♂️ Winning chances ⛹️‍♂️{t2}"
