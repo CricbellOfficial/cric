@@ -63,9 +63,6 @@ def get_movie(query):
                     pt = f"{rep}"
                 else:
                     pt2 = f"{rep}"
-            if pt=="0":
-                ok = 'ok'
-            else:
                 movie_details["t1p"] = f"{pt}"
                 movie_details["t2p"] = f"{pt2}"
             
