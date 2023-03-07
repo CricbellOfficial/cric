@@ -17,13 +17,13 @@ chatid = ""
 x = 0
 
 def welcome(update, context) -> None:
-    update.message.reply_text(f"Hello *{update.message.from_user.first_name}* \n Welcome To Our Cricket Fan Group.\n"
-                              f"🔥 Search It 💯  Enjoy it  🍿")
+    update.message.reply_text(f"Hello *{update.message.from_user.first_name}* \n 🏏 Welcome To Our Cricket Fan Group 🏏\n"
+                              f"🔥 Predict it 💯  Win it  🍿")
     #update.message.reply_text("👇 Type Movie Or Series Name 👇")
 
 
 def find_movie(update, context):
-    search_results = update.message.reply_text("🔥 Searching.... Pls Wait..💯")
+    search_results = update.message.reply_text("🔥 Todays Tips.... Pls Wait..💯")
     query = update.message.text
     movies_list = search_movies(query)
     
@@ -33,10 +33,10 @@ def find_movie(update, context):
             keyboard = InlineKeyboardButton(movie["title"], callback_data=movie["id"])
             keyboards.append([keyboard])
         reply_markup = InlineKeyboardMarkup(keyboards)
-        search_results.edit_text('Here I found - Pls Select One..!', reply_markup=reply_markup)
+        search_results.edit_text('👇 Today Tips 👇!', reply_markup=reply_markup)
     else:
-        search_results.edit_text('Sorry Not Found ! Check Your Spelling or')
-       
+        #search_results.edit_text('Sorry Not Found ! Check Your Spelling or')
+        ok = 'ok'
             
           
 
@@ -60,15 +60,15 @@ def movie_result(update, context) -> None:
     t2c = s['t2p']
     t1p = t1c.replace('%', '')
     t2p = t2c.replace('%', '')
-    request = InlineKeyboardButton(pick, url="https://t.me/fzfilmyzilla")
+    request = InlineKeyboardButton(pick, url="https://t.me/cricbellofficiall")
     keyboards.append([request])
     reply_markup = InlineKeyboardMarkup(keyboards)
     #query.message.reply_text('#cricbell_expert', reply_markup=reply_markup)
         
-    k = query.message.reply_photo(photo=img, caption=f"🎥 {s['title']}", reply_markup=reply_markup)
+    k = query.message.reply_photo(photo=img, caption=f"🏆 {s['title']}\n👇#cricbellExpert Today Team Choice 👇", reply_markup=reply_markup)
     global msgid1
     msgid1 = k["message_id"]
-    text = f"{t1} Winning chances {t2}"
+    text = f"{t1}⛹️‍♂️ Winning chances ⛹️‍♂️{t2}"
 
     m = query.message.reply_text(text)
     idd = m.message_id
