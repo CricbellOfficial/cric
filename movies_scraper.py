@@ -63,8 +63,8 @@ def get_movie(query):
                     pt = f"{rep}"
                 else:
                     pt2 = f"{rep}"
-                movie_details["t1p"] = f"{pt}"
-                movie_details["t2p"] = f"{pt2}"
+            movie_details["t1p"] = f"{pt}"
+            movie_details["t2p"] = f"{pt2}"    
             
             
     return movie_details
