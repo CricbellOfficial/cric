@@ -47,7 +47,7 @@ def movie_result(update, context) -> None:
     msgid = query.message.message_id
     chatid = query.message.chat.id
     s = get_movie(query.data)
-    response = requests.get("https://res.cloudinary.com/qm-media/image/upload/w_100,f_auto/varial/ocb/logos/teams/victoria")
+    response = requests.get("https://graph.org/file/98a7d42968319f27bc804.jpg")
     img = BytesIO(response.content)
     
     
@@ -56,27 +56,22 @@ def movie_result(update, context) -> None:
     pp = s['t1']
     
     text = f"team1:{pp}"
-    m = query.message.reply_photo(photo=img, caption=f"🎥 {text}")
+    m = query.message.reply_photo(photo=img, caption=f"🎥 s['title']")
     global msgid1
     msgid1 = m["message_id"]
-    request = InlineKeyboardButton("Follow me", url="https://t.me/fzfilmyzilla")
+    request = InlineKeyboardButton(pick, url="https://t.me/fzfilmyzilla")
     keyboards.append([request])
     
     reply_markup = InlineKeyboardMarkup(keyboards)
-    query.message.reply_text('Click To Watch Online & Download', reply_markup=reply_markup)
+    query.message.reply_text('#cricbell_expert', reply_markup=reply_markup)
     m = query.message.reply_text(pick)
     idd = m.message_id
-    m.edit_text("◼️ ◻️ ◻️ ◻️ ◻️ ◻️ ◻️ ◻️ ◻️ ◻️")
-    m.edit_text("◼️ ◼️ ◻️ ◻️ ◻️ ◻️ ◻️ ◻️ ◻️ ◻️")
-    m.edit_text("◼️ ◼️ ◼️ ◻️ ◻️ ◻️ ◻️ ◻️ ◻️ ◻️")
-    m.edit_text("◼️ ◼️ ◼️ ◼️ ◻️ ◻️ ◻️ ◻️ ◻️ ◻️")
-    m.edit_text("◼️ ◼️ ◼️ ◼️ ◼️ ◻️ ◻️ ◻️ ◻️ ◻️")
-    m.edit_text("◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◻️ ◻️ ◻️ ◻️")
-    m.edit_text("◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◻️ ◻️ ◻️")
-    m.edit_text("◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◻️ ◻️")
-    m.edit_text("◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◻️ ◻️")
-    m.edit_text("◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◻️")
-    m.edit_text("◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️ ◼️")
+    m.edit_text("◼️◻️◻️◻️◻️◻️◻️◻️◻️◻️")
+    m.edit_text("◼️◼️◼️◻️◻️◻️◻️◻️◻️◻️")
+    m.edit_text("◼️◼️◼️◼️◼️◻️◻️◻️◻️◻️")
+    m.edit_text("◼️◼️◼️◼️◼️◼️◼️◻️◻️◻️")
+    m.edit_text("◼️◼️◼️◼️◼️◼️◼️◼️◻️◻️")
+    m.edit_text("◼️◼️◼️◼️◼️◼️◼️◼️◼️◼️")
 
    
 
