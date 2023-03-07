@@ -54,7 +54,7 @@ def movie_result(update, context) -> None:
     keyboards = []
     pick = s['pick']
     t1 = s['t1']
-    t1 = s['t2']
+    t2 = s['t2']
     #int(float(a))
     t1c = s['t1p']
     t2c = s['t2p']
@@ -68,19 +68,23 @@ def movie_result(update, context) -> None:
     k = query.message.reply_photo(photo=img, caption=f"🎥 {s['title']}", reply_markup=reply_markup)
     global msgid1
     msgid1 = k["message_id"]
+    text = f"{t1} Winning chances {t2}"
 
-    m = query.message.reply_text(f"{t1c}{t2c}")
+    m = query.message.reply_text(text)
     idd = m.message_id
     if 0 < int(float(t1p)) < 20:
-        m.edit_text(f"{t1c}◼️◻️◻️◻️◻️◻️{t2c}")
+        m.edit_text(f"{text}\n{t1c}◼️◻️◻️◻️◻️◻️{t2c}")
     if 21 < int(float(t1p)) < 40:
-        m.edit_text(f"{t1c}◼️◼️◻️◻️◻️◻️{t2c}")
+        m.edit_text(f"{text}\n{t1c}◼️◼️◻️◻️◻️◻️{t2c}")
     if 41 < int(float(t1p)) < 60:
-        m.edit_text(f"{t1c}◼️◼️◼️◻️◻️◻️{t2c}")
+        m.edit_text(f"{text}\n{t1c}◼️◼️◼️◻️◻️◻️{t2c}")
     if 61 < int(float(t1p)) < 80:
-        m.edit_text(f"{t1c}◼️◼️◼️◼️◻️◻️{t2c}")
+        m.edit_text(f"{text}\n{t1c}◼️◼️◼️◼️◻️◻️{t2c}")
     if 81 < int(float(t1p)) < 100:
-        m.edit_text(f"{t1c}◼️◼️◼️◼️◼️◻️{t2c}")
+        m.edit_text(f"{text}\n{t1c}◼️◼️◼️◼️◼️◻️{t2c}")
+    else:
+        ok = 'ok'
+        m.edit_text("Running Update join our Official Channel)
    
 
    
