@@ -57,7 +57,7 @@ def get_movie(query):
             pt2 = "0"
             for pp in prob:
                 cc = f"{pp}"
-                rep = cc.replace('<div class="name">','')
+                rep = cc.replace('<div class="prob">','')
                 rep = rep.replace('</div>','')
                 if pt=="0":
                     pt = f"{rep}"
