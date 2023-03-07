@@ -72,15 +72,15 @@ def movie_result(update, context) -> None:
     m = query.message.reply_text(f"{t1c}{t2c}")
     idd = m.message_id
     if 0 < int(float(t1p)) < 20:
-        m.edit_text(f"{t1p}◼️◻️◻️◻️◻️◻️◻️◻️◻️◻️{t2p}")
+        m.edit_text(f"{t1c}◼️◻️◻️◻️◻️◻️{t2c}")
     if 21 < int(float(t1p)) < 40:
-        m.edit_text(f"{t1p}◼️◼️◼️◻️◻️◻️◻️◻️◻️◻️{t2p}")
+        m.edit_text(f"{t1c}◼️◼️◻️◻️◻️◻️{t2c}")
     if 41 < int(float(t1p)) < 60:
-        m.edit_text(f"{t1p}◼️◼️◼️◼️◼️◻️◻️◻️◻️◻️{t2p}")
+        m.edit_text(f"{t1c}◼️◼️◼️◻️◻️◻️{t2c}")
     if 61 < int(float(t1p)) < 80:
-        m.edit_text(f"{t1p}◼️◼️◼️◼️◼️◼️◼️◻️◻️◻️{t2p}")
+        m.edit_text(f"{t1c}◼️◼️◼️◼️◻️◻️{t2c}")
     if 81 < int(float(t1p)) < 100:
-        m.edit_text(f"{t1p}◼️◼️◼️◼️◼️◼️◼️◼️◻️◻️{t2p}")
+        m.edit_text(f"{t1c}◼️◼️◼️◼️◼️◻️{t2c}")
    
 
    
